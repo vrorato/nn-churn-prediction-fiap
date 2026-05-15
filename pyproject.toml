@@ -1,0 +1,11 @@
+[project]
+name = "nn-churn-prediction-fiap"
+version = "0.1.0"
+description = "Churn prediction using neural networks"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas>=3.0.3",
+    "scikit-learn>=1.8.0",
+    "torch>=2.12.0",
+]
