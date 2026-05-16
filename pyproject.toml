@@ -3,11 +3,11 @@ name = "nn-churn-prediction-fiap"
 version = "0.1.0"
 description = "Churn prediction using neural networks"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.13"
 dependencies = [
-    "mlflow>=1.27.0",
+    "mlflow>=2.10.0",
     "numpy>=2.4.4",
-    "pandas>=3.0.3",
+    "pandas>=2.1.0,<3.0.0",
     "pandera>=0.31.1",
     "scikit-learn>=1.8.0",
     "torch>=2.12.0",
