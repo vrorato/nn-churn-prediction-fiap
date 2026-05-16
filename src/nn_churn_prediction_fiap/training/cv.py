@@ -60,20 +60,19 @@ def run_cv(
             X_train, X_val = X.iloc[train_idx], X.iloc[val_idx]
             y_train, y_val = y[train_idx], y[val_idx]
 
-            model = model_factory(random_state=random_state)
-            model.fit(X_train, y_train)
-            y_proba = model.predict_proba(X_val)[:, 1]
-
-            metrics = compute_metrics(y_val, y_proba)
-            fold_metrics.append(metrics)
-
             with mlflow.start_run(
                 run_name=f"{model_name}_fold{fold_idx}",
                 nested=True,
                 tags={"fold": fold_idx, "parent_run_id": parent_run.info.run_id},
             ):
+                model = model_factory(random_state=random_state)
+                model.fit(X_train, y_train)
+                y_proba = model.predict_proba(X_val)[:, 1]
+
+                metrics = compute_metrics(y_val, y_proba)
                 mlflow.log_metrics({f"fold_{k}": v for k, v in metrics.items()})
 
+            fold_metrics.append(metrics)
             logger.info(
                 "fold complete",
                 extra={"model": model_name, "fold": fold_idx, **metrics},
