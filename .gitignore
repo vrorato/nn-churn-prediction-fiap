@@ -11,9 +11,17 @@ wheels/
 
 .env
 
-/data/
+# Data — raw/interim/processed are gitignored; data/README.md (sha256 doc) is kept
+/data/raw/
+/data/interim/
+/data/processed/
+
+# ML artifacts and experiment tracking
 mlruns/
 mlflow.db
-models/
+/models/
+
+# Tool caches and test artifacts
 .ruff_cache
-video_script.md
+.pytest_cache/
+.coverage
