@@ -11,8 +11,9 @@ wheels/
 
 .env
 
-data/
+/data/
 mlruns/
 mlflow.db
 models/
 .ruff_cache
+video_script.md
