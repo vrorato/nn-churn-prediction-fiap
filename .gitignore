@@ -25,3 +25,11 @@ mlflow.db
 .ruff_cache
 .pytest_cache/
 .coverage
+
+# ci/cd github actions
+.github/
+
+# doc
+docs/video_script.md
+
+
