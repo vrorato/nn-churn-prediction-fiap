@@ -29,11 +29,20 @@ End-to-end ML system that predicts which telecom customers are likely to churn, 
 
 ---
 
+## Prerequisites
+
+- **Python 3.12** (managed automatically by `uv`)
+- **make**
+  - Linux / macOS: already available
+  - Windows: use [WSL](https://learn.microsoft.com/windows/wsl/) (recommended) or install `make` via [Chocolatey](https://chocolatey.org/) (`choco install make`) / [Scoop](https://scoop.sh/) (`scoop install make`)
+
 ## Quickstart
 
 ```bash
-# 1. Install dependencies
-make setup
+# 1. Clone and install everything (uv + all dependencies + pre-commit hooks)
+git clone <repo-url>
+cd nn-churn-prediction-fiap
+make install
 
 # 2. Place the raw CSV at data/raw/raw.csv
 #    Source: https://www.kaggle.com/datasets/blastchar/telco-customer-churn
@@ -47,6 +56,12 @@ make serve
 # 5. (Optional) Open MLflow UI
 make mlflow
 ```
+
+> **Windows (PowerShell, no make):** run these two commands instead of `make install`:
+> ```powershell
+> powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+> uv sync --all-extras --group dev
+> ```
 
 ---
 
