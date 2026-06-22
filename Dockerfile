@@ -17,11 +17,11 @@ WORKDIR /app
 COPY --from=builder /app/.venv /app/.venv
 COPY --from=builder /app/src /app/src
 COPY --from=builder /app/pyproject.toml /app/pyproject.toml
-COPY mlruns/ mlruns/
-COPY mlflow.db mlflow.db
+COPY mlruns/1/models/m-01bd0205cfda4568b8012e321097ce6e/artifacts/ model/
 
 ENV PATH="/app/.venv/bin:$PATH" \
-    PYTHONUNBUFFERED=1
+    PYTHONUNBUFFERED=1 \
+    MODEL_PATH=/app/model
 
 EXPOSE 8000
 
