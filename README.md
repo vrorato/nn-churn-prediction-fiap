@@ -104,7 +104,17 @@ curl -s -X POST http://localhost:8000/predict \
 # }
 ```
 
-Interactive docs available at `http://localhost:8000/docs` when the server is running.
+Interactive docs available at `http://localhost:8000/docs` when the server is running locally.
+
+---
+
+## Live API (Render)
+
+The API is deployed on Render's free tier:
+
+**https://churn-api-latest-vfru.onrender.com/docs**
+
+> The free tier spins down after 15 minutes of inactivity. The first request after idle will take **20–30 seconds** to cold-start — just wait and retry.
 
 ---
 
